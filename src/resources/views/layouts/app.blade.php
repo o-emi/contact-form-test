@@ -19,7 +19,8 @@
       <nav>
         <ul class="header-nav">
           <li class="header-nav__item">
-            <a class="header-nav__link" href="">login</a>
+            <!-- <a class="header-nav__link" href="">login</a> -->
+            @yield('header-link')
           </li>
         </ul>
       </nav>
