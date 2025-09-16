@@ -26,7 +26,10 @@ use App\Http\Controllers\AdminController;
 // 画面（ビュー）を表示するため
 Route::get('/register', [RegisterController::class, 'register'])->name('register');
 Route::get('/login', [LoginController::class, 'login'])->name('login');
+// お問い合わせフォーム（表示）
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
-Route::get('/confirm', [ConfirmController::class, 'confirm'])->name('confirm');
-Route::get('/thanks', [ThanksController::class, 'thanks'])->name('thanks');
+// お問い合わせフォーム（確認画面）
+Route::post('/confirm', [ContactController::class, 'confirm'])->name('/confirm');
+// お問い合わせフォーム（送信後サンクス画面）
+Route::get('/thanks', [ContactController::class, 'thanks'])->name('thanks');
 Route::get('/admin', [AdminController::class, 'admin'])->name('admin');

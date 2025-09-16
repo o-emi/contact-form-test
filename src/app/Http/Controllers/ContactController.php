@@ -19,13 +19,11 @@ class ContactController extends Controller
         // 電話番号を結合
         $contact['tel'] = $contact['tel_1'] . '-' . $contact['tel_2'] . '-' . $contact['tel_3'];
         // 確認画面に渡す
-        return view('contacts.confirm', compact('contact'));
+        return view('contact.confirm', compact('contact'));
     }
 
-// 確認画面 → 送信
-    public function send(Request $request)
+    public function thanks()
     {
-        // $request->tel で結合済みの電話番号が取得可能
-        // 保存処理やメール送信など
+        return view('thanks');
     }
 }

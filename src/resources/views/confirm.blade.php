@@ -64,7 +64,8 @@
             <tr class="confirm-table__row">
                 <th class="confirm-table__header">お問い合わせの種類</th>
                 <td class="confirm-table__text">
-                    <input type="text" name="tel" value="{{ $contact['email'] }}" readonly/>
+                    <!-- [仮]ダミーデータ作成後、削除（コントローラにも） -->
+                    <input type="text" name="contact_type" value="{{ $contact['contact_type'] === 'product' ? '商品の交換について' : 'その他' }}" readonly/>
                 </td>
             </tr>
 お問い合わせ内容
