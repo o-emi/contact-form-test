@@ -22,8 +22,12 @@ class ContactController extends Controller
         return view('contact.confirm', compact('contact'));
     }
 
-    public function thanks()
+    public function store(ContactRequest $request)
     {
-        return view('thanks');
+        $contact = $request->only(['name', 'email', 'tel', 'content']);
+        Contact::create($contact);
+
+    // サンクス画面にリダイレクト
+        return redirect()->route('thanks.show', ['type' => 'contact']);
     }
 }

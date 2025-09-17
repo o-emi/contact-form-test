@@ -4,9 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\ConfirmController;
-use App\Http\Controllers\ThanksController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ThanksController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,13 +22,23 @@ use App\Http\Controllers\AdminController;
 //     return view('welcome');
 // });
 
-// 画面（ビュー）を表示するため
-Route::get('/register', [RegisterController::class, 'register'])->name('register');
-Route::get('/login', [LoginController::class, 'login'])->name('login');
+// 登録登録画面表示
+Route::get('register', [RegisterController::class, 'register'])->name('register');
+// 会員登録フォーム送信
+Route::post('/register', [RegisterController::class, 'store']);
+
+
+Route::get('login', [LoginController::class, 'login'])->name('login');
+
 // お問い合わせフォーム（表示）
-Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
+Route::get('contact', [ContactController::class, 'contact'])->name('contact');
 // お問い合わせフォーム（確認画面）
-Route::post('/confirm', [ContactController::class, 'confirm'])->name('/confirm');
+Route::post('confirm', [ContactController::class, 'confirm'])->name('confirm');
 // お問い合わせフォーム（送信後サンクス画面）
-Route::get('/thanks', [ContactController::class, 'thanks'])->name('thanks');
-Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
+Route::post('thanks', [ContactController::class, 'thanks'])->name('thanks');
+
+// 管理画面
+Route::get('admin', [AdminController::class, 'admin'])->name('admin');
+
+// サンクスページ（複数パターン（登録、お問い合わせ））
+Route::get('/thanks/{type}', [ThanksController::class, 'show'])->name('thanks.show');

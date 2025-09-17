@@ -64,21 +64,32 @@
             <tr class="confirm-table__row">
                 <th class="confirm-table__header">お問い合わせの種類</th>
                 <td class="confirm-table__text">
-                    <!-- [仮]ダミーデータ作成後、削除（コントローラにも） -->
-                    <input type="text" name="contact_type" value="{{ $contact['contact_type'] === 'product' ? '商品の交換について' : 'その他' }}" readonly/>
+<!-- TODO::[仮]後でDBに書き換える -->
+                    @php
+                        $contactTypes = [
+                        'product' => '商品の交換について',
+                        'support' => 'サポートについて',
+                        'other'   => 'その他',
+                        ];
+                    @endphp
+                    <input type="text" name="contact_type"
+                    value="{{ $contactTypes[$contact['contact_type']] ?? '未選択' }}"
+                    readonly/>
                 </td>
             </tr>
-お問い合わせ内容
+<!-- お問い合わせ内容 -->
             <tr class="confirm-table__row">
-              <th class="confirm-table__header">お問い合わせ内容</th>
-              <td class="confirm-table__text">
-                <input type="text" name="content" value="{{ $contact['content'] }}" readonly/>
-              </td>
+                <th class="confirm-table__header">お問い合わせ内容</th>
+                <td class="confirm-table__text">
+                    <textarea name="content" readonly>{{ $contact['content'] }}</textarea>
+                </td>
             </tr>
-          </table>
+            </table>
         </div>
         <div class="form__button">
-          <button class="form__button-submit" type="submit">送信</button>
+            <button class="form__button-submit" type="submit">送信</button>
+<!-- 修正リンク -->
+            <a href="{{ route('contact') }}" class="btn-edit">修正</a>
         </div>
-      </form>
-    </div>
+    </form>
+</div>
