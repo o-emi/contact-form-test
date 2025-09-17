@@ -18,7 +18,9 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        // 'name',
+        'first_name',
+        'last_name',
         'email',
         'password',
     ];
@@ -41,4 +43,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+// リレーション：ユーザーは複数のお問い合わせを持つ
+    public function contacts()
+    {
+        return $this->hasMany(Contact::class);
+    }
 }
