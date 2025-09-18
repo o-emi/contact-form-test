@@ -13,7 +13,7 @@
     </div>
     <!-- <form class="form"> -->
         <!-- 値をコントローラに送る（confirmアクションを呼び出すルーデングと結びつける） -->
-    <form class="form" action="/contacts/confirm" method="post">
+    <form class="form" action="{{ route('contact.confirm') }}" method="post">
     @csrf
 <!-- 名前入力フォーム -->
     <div class="form__group">
@@ -132,13 +132,18 @@
         </div>
         <div class="form__group-content">
             <div class="form__input--text">
-                <select name="contact_type" required>
-                    <option value="" selected>選択してください</option>
-                    <option value="product">商品の交換について</option>
-                    <option value="other">その他</option>
+                <select class="create-form__item-select" name="category_id" required>
+                    <option value="">選択してください</option>
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}"
+                        {{ old('category_id') == $category->id ? 'selected' : '' }}>
+                        {{ $category->content }}
+                    </option>
+                    @endforeach
+
                 </select>
             <div class="form__error">
-                @error('name')
+                @error('category_id')
                     {{ $message }}
                 @enderror
             </div>

@@ -1,4 +1,3 @@
-<!-- resources/views/register.blade.php -->
 @extends('layouts.app')
 
 @section('css')
@@ -14,7 +13,7 @@
     </div>
 <!-- HOMEボタン -->
     <div class="thanks__button">
-        <a href="{{ route('index') }}" class="thanks__button-submit">
+        <a href="{{ route('home') }}" class="thanks__button-submit">
         HOME
         </a>
     </div>

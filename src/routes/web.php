@@ -33,7 +33,7 @@ Route::post('/register', [RegisterController::class, 'store'])->name('register.s
 Route::get('login', [LoginController::class, 'login'])->name('login');
 
 // お問い合わせフォーム（確認画面）
-Route::post('confirm', [ContactController::class, 'confirm'])->name('contact.confirm');
+Route::post('/confirm', [ContactController::class, 'confirm'])->name('contact.confirm');
 // お問い合わせフォーム（送信処理）
 Route::post('store', [ContactController::class, 'send'])->name('contact.store');
 
@@ -45,3 +45,5 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 // サンクスページ（複数パターン）
 Route::get('/thanks/{type}', [ThanksController::class, 'show'])->name('thanks.show');
+// サンクス画面（送信後）
+Route::post('/store', [ContactController::class, 'store'])->name('contact.store');
