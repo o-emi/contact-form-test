@@ -13,6 +13,7 @@
 display: flex;
 align-items: center;
 justify-content: space-between;
+padding: 10px 20px;
 }
 
 .header__logo {
@@ -26,8 +27,17 @@ justify-content: space-between;
   text-decoration: none;
 }
 
+.header-nav {
+    display: flex;
+    gap: 20px; /* リンク間の間隔 */
+}
+
 .header-nav__link {
   font-size: 16px;
   color: #D9C6B5;
   text-decoration: none;
+}
+
+.header-nav__link:hover {
+    color: #ff0000; /* ホバー時赤色など */
 }

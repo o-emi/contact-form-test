@@ -1,0 +1,12 @@
+/* エラー時の枠線と文字色 */
+.form__group .form__error {
+    color: #ff0000; /* 赤文字 */
+    font-size: 0.875rem;
+    margin-top: 5px;
+}
+
+/* エラーがある場合の入力欄の赤枠 */
+.form__group input.is-invalid {
+    border: 1px solid #ff0000; /* 赤枠 */
+    background-color: #f7f7f7;  /* 背景は薄グレーのまま */
+}

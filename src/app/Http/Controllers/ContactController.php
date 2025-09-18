@@ -3,15 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Contact;
 
 class ContactController extends Controller
 {
-    public function contact()
+// 入力ページ
+    public function index()
     {
-        return view('contact');
+        return view('contact.index');
     }
 
-
+// 確認ページ
     public function confirm(Request $request)
     {
         // 入力値をすべて取得

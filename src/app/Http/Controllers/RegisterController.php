@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Http\Requests\RegisterRequest;
 
 class RegisterController extends Controller
 {
@@ -12,13 +14,17 @@ class RegisterController extends Controller
         return view('register');
     }
 
-    public function store(Request $request)
+    public function store(RegisterRequest $request)
     {
-        $data = $request->only(['name','email','password']);
-// パスワードはハッシュ化
-        $data['password'] = bcrypt($data['password']);
+// バリデーション
+    $validated = $request->validated();
 
-        User::create($data);
+
+// パスワードはハッシュ化
+    $validated['password'] = bcrypt($validated['password']);
+
+// ユーザー作成
+    User::create($validated);
 
 // サンクス画面にリダイレクト
         return redirect()->route('thanks.show', ['type' => 'register']);

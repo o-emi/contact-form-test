@@ -6,7 +6,9 @@
 @endsection
 
 @section('header-link')
-<a class="header-nav__link" href="{{ route('login') }}">Login</a>
+<li class="header-nav__item">
+    <a class="header-nav__link" href="{{ route('register') }}">Register</a>
+</li>
 @endsection
 
 
@@ -16,7 +18,7 @@
     <div class="logiin-form__heading">
         <h2>Login</h2>
     </div>
-    <form class="login-form" action="" method="post">
+    <form class="login-form" action="{ route('login') }}" method="post">
         @csrf
         <div class="form__group">
             <div class="form__group-title">

@@ -21,6 +21,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+// ユーザーモデルに管理者フラグを持たせる
+            $table->boolean('is_admin')->default(false);
         });
     }
 

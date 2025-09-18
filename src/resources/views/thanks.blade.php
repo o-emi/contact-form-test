@@ -12,6 +12,12 @@
             <h2>{{ $message }}</h2>
         </div>
     </div>
+<!-- HOMEボタン -->
+    <div class="thanks__button">
+        <a href="{{ route('index') }}" class="thanks__button-submit">
+        HOME
+        </a>
+    </div>
 
 <!-- TODO: 入力欄スタイル調整 -->
     <!-- TODO: ボタンデザイン調整 -->

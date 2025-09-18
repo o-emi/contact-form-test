@@ -13,15 +13,14 @@
   <header class="header">
     <div class="header__inner">
       <div class="header-utilities">
+<!-- ロゴは固定-->
         <a class="header__logo"href="/">
         FashionablyLate
         </a>
+<!-- 各ページで差し替え可能なリンク -->
       <nav>
         <ul class="header-nav">
-          <li class="header-nav__item">
-            <!-- <a class="header-nav__link" href="">login</a> -->
             @yield('header-link')
-          </li>
         </ul>
       </nav>
       </div>
