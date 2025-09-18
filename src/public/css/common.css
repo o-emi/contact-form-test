@@ -1,0 +1,43 @@
+.header {
+  background: white;
+  border-bottom: 1px solid #E0DFDE
+}
+
+.header__inner {
+  margin: 0 auto;
+  padding: 20px 15px;
+  max-width: 1512px;
+}
+
+.header-utilities {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 10px 20px;
+}
+
+.header__logo {
+  color: #8B7969;
+  font-family: 'Inika', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 35px;
+  line-height: 1; /* 100% = 1 */
+  letter-spacing: 0;
+  text-decoration: none;
+}
+
+.header-nav {
+    display: flex;
+    gap: 20px; /* リンク間の間隔 */
+}
+
+.header-nav__link {
+  font-size: 16px;
+  color: #D9C6B5;
+  text-decoration: none;
+}
+
+.header-nav__link:hover {
+    color: #ff0000; /* ホバー時赤色など */
+}
