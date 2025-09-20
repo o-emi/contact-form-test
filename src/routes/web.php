@@ -29,8 +29,10 @@ Route::get('/', [ContactController::class, 'index'])->name('home');
 Route::get('register', [RegisterController::class, 'register'])->name('register');
 Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 
-// ログイン
-Route::get('login', [LoginController::class, 'login'])->name('login');
+// ログイン表示用
+Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
+// ログイン送信用
+Route::post('login', [LoginController::class, 'login']);
 
 // お問い合わせフォーム（確認画面）
 Route::post('/confirm', [ContactController::class, 'confirm'])->name('contact.confirm');

@@ -1,4 +1,3 @@
-<!-- resources/views/register.blade.php -->
 @extends('layouts.app')
 
 @section('css')
@@ -18,7 +17,7 @@
     <div class="login-form__heading">
         <h2>Login</h2>
     </div>
-    <form class="login-form" action="{ route('login') }}" method="post">
+    <form class="login-form" action="{{ route('login') }}" method="POST">
         @csrf
         <div class="form__group">
             <div class="form__group-title">
@@ -47,7 +46,7 @@
                 </div>
                 <div class="form__error">
             <!--バリデーション機能を実装したら記述します。-->
-                    @error('tel')
+                    @error('password')
                         {{ $message }}
                     @enderror
                 </div>
@@ -58,6 +57,4 @@
         </div>
     </form>
 </div>
-    <!-- TODO: 入力欄スタイル調整 -->
-    <!-- TODO: ボタンデザイン調整 -->
 @endsection
