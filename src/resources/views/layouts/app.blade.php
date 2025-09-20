@@ -12,7 +12,7 @@
 <body>
   <header class="header">
     <div class="header__inner">
-      <div class="header-utilities">
+      <!-- <div class="header-utilities"> -->
 <!-- ロゴは固定-->
         <a class="header__logo"href="/">
         FashionablyLate

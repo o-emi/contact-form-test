@@ -1,43 +1,60 @@
 .header {
   background: white;
-  border-bottom: 1px solid #E0DFDE
+  border-bottom: 1px solid #E0DFDE;
 }
 
 .header__inner {
   margin: 0 auto;
   padding: 20px 15px;
   max-width: 1512px;
-}
-
-.header-utilities {
-display: flex;
-align-items: center;
-justify-content: space-between;
-padding: 10px 20px;
+  display: flex;
+  justify-content: space-between; /* 左右に分ける */
+  align-items: center;     /* 縦中央 */
+  height: 100px;           /* ヘッダー高さ */
+  /* position: relative;      子要素の絶対配置があれば必要 */
 }
 
 .header__logo {
   color: #8B7969;
   font-family: 'Inika', sans-serif;
-  font-weight: 400;
-  font-style: normal;
   font-size: 35px;
-  line-height: 1; /* 100% = 1 */
-  letter-spacing: 0;
   text-decoration: none;
+  text-align: center;
+  z-index: 1; /* 他要素と重なる場合 */
 }
 
+
+/* .header-utilities {
+position: absolute;
+margin-right: 5px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 20px;
+} */
+
 .header-nav {
-    display: flex;
-    gap: 20px; /* リンク間の間隔 */
+  display: flex;
+  text-align: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
 }
 
 .header-nav__link {
-  font-size: 16px;
+  display: inline-block; /* 幅を指定できるように */
+  font-size: 15px;
   color: #D9C6B5;
   text-decoration: none;
+  padding: 5px 12px;
+  border: 1px solid #D9C6B5;
+  width: 85px;   /* 横幅を伸ばす */
+  text-align: center; /* リンク内文字を中央に */
+  white-space: nowrap; /* 改行させない */
+  transition: 0.2s, color 0.2s;
 }
 
 .header-nav__link:hover {
-    color: #ff0000; /* ホバー時赤色など */
+  background-color: #D9C6B5;      /* ホバーで背景色 */
+  color: #fff;                    /* ホバーで文字色 */
 }
