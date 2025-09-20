@@ -32,6 +32,7 @@ class ContactRequest extends FormRequest
         'tel_2'        => 'required',
         'tel_3'        => 'required',                // 電話番号
         'address'      => 'required|string',
+        'address_2' => 'nullable|string|max:100',
         'category_id'  => 'required|exists:categories,id', // お問い合わせ種類
         'content'      => 'required|string|max:120',       // お問い合わせ内容
         ];
@@ -52,5 +53,19 @@ class ContactRequest extends FormRequest
         'content.required'     => 'お問い合わせ内容を入力してください',
         'content.max'          => 'お問合せ内容は120文字以内で入力してください',
         ];
+    }
+
+    public function withValidator($validator)
+    {
+    $validator->after(function ($validator) {
+        $tel1 = $this->input('tel_1');
+        $tel2 = $this->input('tel_2');
+        $tel3 = $this->input('tel_3');
+
+        // いずれかが空なら「電話番号を入力してください」とまとめる
+        if (empty($tel1) || empty($tel2) || empty($tel3)) {
+            $validator->errors()->add('tel', '電話番号を入力してください');
+        }
+    });
     }
 }
