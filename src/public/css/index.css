@@ -1,0 +1,59 @@
+
+
+/* 見出しのスタイル */
+.contact-form__heading h2 {
+    font-family: 'Inika', serif;
+    font-size: 28px;
+    color: #8B7969;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.contct-form__content {
+  width: 90%;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+
+.form_group-wrapper {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;      /* 縦中央 */
+    margin-bottom: 16px;
+    background-color: #f5f5f5; /* 背景色 */
+}
+
+.form__group-title {
+    width: 150px;           /* ラベル幅固定 */
+    text-align: left;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 4px;               /* ラベルと※の間隔 */
+}
+
+.form__group-content {
+    flex: 1; /* ラベル以外のスペースをすべて入力欄に */
+}
+
+
+/* ボタンの中央寄せ */
+.form__button {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.form__button-submit {
+  padding: 12px 32px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #82756A
+}
+
+
