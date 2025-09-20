@@ -1,8 +1,7 @@
-<!-- resources/views/register.blade.php -->
 @extends('layouts.app')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/contact.css') }}">
+<link rel="stylesheet" href="{{ asset('css/index.css') }}">
 @endsection
 
 @section('content')
@@ -16,7 +15,7 @@
     <form class="form" action="{{ route('contact.confirm') }}" method="post">
     @csrf
 <!-- 名前入力フォーム -->
-    <div class="form__group">
+    <div class="c">
         <div class="form__group-title">
             <span class="form__label--item">お名前</span>
             <span class="form__label--required">※</span>
@@ -36,7 +35,7 @@
         </div>
     </div>
 <!-- 性別選択 -->
-    <div class="form__group">
+    <div class="form__group-wrapper">
         <div class="form__group-title">
             <span class="form__label--item">性別</span>
             <span class="form__label--required">※</span>
@@ -55,7 +54,7 @@
         </div>
     </div>
 <!-- メールアドレス -->
-    <div class="form__group">
+    <div class="form__group-wrapper">
         <div class="form__group-title">
             <span class="form__label--item">メールアドレス</span>
             <span class="form__label--required">※</span>
@@ -72,7 +71,7 @@
         </div>
     </div>
 <!-- 電話番号 -->
-    <div class="form__group">
+    <div class="form__group-wrapper">
         <div class="form__group-title">
             <span class="form__label--item">電話番号</span>
             <span class="form__label--required">※</span>
@@ -91,7 +90,7 @@
         </div>
     </div>
 <!-- 住所 -->
-    <div class="form__group">
+    <div class="form__group-wrapper">
         <div class="form__group-title">
             <span class="form__label--item">住所</span>
             <span class="form__label--required">※</span>
@@ -108,7 +107,7 @@
         </div>
     </div>
 <!-- 建物名 -->
-    <div class="form__group">
+    <div class="form__group-wrapper">
         <div class="form__group-title">
             <span class="form__label--item">建物名</span>
             <span class="form__label--required">※</span>
@@ -125,7 +124,7 @@
         </div>
     </div>
 <!-- お問い合わせの種類 -->
-    <div class="form__group">
+    <div class="form__group-wrapper">
         <div class="form__group-title">
             <span class="form__label--item">お問い合わせの種類</span>
             <span class="form__label--required">※</span>
@@ -150,7 +149,7 @@
         </div>
     </div>
 <!-- お問い合わせ内容 -->
-    <div class="form__group">
+    <div class="form__group-wrapper">
         <div class="form__group-title">
             <span class="form__label--item">お問い合わせ内容</span>
             <span class="form__label--required">※</span>
@@ -166,6 +165,5 @@
         </div>
     </form>
 </div>
-    <!-- TODO: 入力欄スタイル調整 -->
-    <!-- TODO: ボタンデザイン調整 -->
+
 @endsection
