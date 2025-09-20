@@ -15,7 +15,7 @@
 @section('content')
 <!-- TODO: フォーム本体の作成 -->
 <div class="login-form__content">
-    <div class="logiin-form__heading">
+    <div class="login-form__heading">
         <h2>Login</h2>
     </div>
     <form class="login-form" action="{ route('login') }}" method="post">
