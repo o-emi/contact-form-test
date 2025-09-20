@@ -25,14 +25,16 @@ class ContactController extends Controller
         $contact['tel'] = $contact['tel_1'] . '-' . $contact['tel_2'] . '-' . $contact['tel_3'];
         // / 選択されたカテゴリ名を取得して追加
         $category = Category::find($request->category_id);
-        $contact['category_name'] = $category->contecnt ?? '未選択';
+        $contact['category_name'] = $category->content ?? '未選択';
         // 確認画面に渡す
         return view('confirm', compact('contact'));
     }
 
     public function store(ContactRequest $request)
     {
-        $contact = $request->only(['name', 'email', 'tel', 'content', 'category_id']);
+        $contact = $request->only([
+        'last_name', 'first_name', 'email', 'tel', 'content', 'category_id'
+        ]);
         Contact::create($contact);
 
     // サンクス画面にリダイレクト
