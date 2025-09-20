@@ -40,6 +40,13 @@
     flex: 1; /* ラベル以外のスペースをすべて入力欄に */
 }
 
+.form__error {
+    color: #ff4d4f;       /* 赤色 */
+    font-size: 0.875rem;  /* 14pxくらい */
+    margin-top: 4px;      /* 上との余白 */
+    display: block;       /* ブロック表示で改行 */
+}
+
 
 /* ボタンの中央寄せ */
 .form__button {

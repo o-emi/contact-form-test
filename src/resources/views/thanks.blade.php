@@ -17,7 +17,4 @@
         HOME
         </a>
     </div>
-
-<!-- TODO: 入力欄スタイル調整 -->
-    <!-- TODO: ボタンデザイン調整 -->
 @endsection
