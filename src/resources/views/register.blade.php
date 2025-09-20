@@ -1,4 +1,3 @@
-<!-- resources/views/register.blade.php -->
 @extends('layouts.app')
 
 @section('css')
@@ -73,6 +72,4 @@
         </div>
     </form>
 </div>
-    <!-- TODO: 入力欄スタイル調整 -->
-    <!-- TODO: ボタンデザイン調整 -->
 @endsection
