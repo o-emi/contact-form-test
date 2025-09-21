@@ -5,10 +5,9 @@
 @endsection
 
 @section('content')
-<!-- TODO: フォーム本体の作成 -->
     <div class="thanks__content">
         <div class="thanks__heading">
-            <h2>{{ $message }}</h2>
+            <h2>{{ session('message') }}</h2>
         </div>
     </div>
 <!-- HOMEボタン -->

@@ -46,6 +46,6 @@ class ContactController extends Controller
     $request->session()->forget('contact_input');
 
     // サンクス画面にリダイレクト
-        return redirect()->route('thanks.show', ['type' => 'contact']);
+        return redirect()->route('thanks.show')->with('message', 'お問い合わせありがとうございました！');
     }
 }

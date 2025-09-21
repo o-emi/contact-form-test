@@ -27,7 +27,7 @@ class RegisterController extends Controller
     User::create($validated);
 
 // サンクス画面にリダイレクト
-        return redirect()->route('thanks.show', ['type' => 'register']);
+    return redirect()->route('thanks.show')->with('message', '会員登録ありがとうございました！');
     }
 
 }
