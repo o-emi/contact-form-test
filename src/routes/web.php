@@ -18,6 +18,7 @@ use App\Http\Controllers\ThanksController;
 |
 */
 
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -37,7 +38,7 @@ Route::post('login', [LoginController::class, 'login']);
 // お問い合わせフォーム（確認画面）
 Route::post('/confirm', [ContactController::class, 'confirm'])->name('contact.confirm');
 // お問い合わせフォーム（送信処理）
-Route::post('store', [ContactController::class, 'send'])->name('contact.store');
+// Route::post('store', [ContactController::class, 'send'])->name('contact.store');
 
 // 管理画面
 Route::middleware(['auth', 'admin'])->group(function () {
@@ -45,7 +46,14 @@ Route::middleware(['auth', 'admin'])->group(function () {
     // 他の管理画面用ルートもここに追加
 });
 
+// サンクス画面（送信後、データ保存）
+Route::post('/store', [ContactController::class, 'store'])->name('contact.store');
+
 // サンクスページ（複数パターン）
 Route::get('/thanks/{type}', [ThanksController::class, 'show'])->name('thanks.show');
-// サンクス画面（送信後）
-Route::post('/store', [ContactController::class, 'store'])->name('contact.store');
+
+
+Route::post('/logout', function () {
+    Auth::logout();
+    return redirect('/login'); // ログアウト後はログイン画面へ
+})->name('logout');

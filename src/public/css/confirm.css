@@ -1,0 +1,21 @@
+.confirm__content {
+    max-width: 480px;
+    margin: 10% auto;
+    padding: 32px;
+    background-color: #f1ece7;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+.confirm__heading h2 {
+    font-family: 'Inika', serif;
+    font-size: 28px;
+    color: #8B7969;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.confirm-table__header {
+  white-space: nowrap; /* 改行させない */
+}

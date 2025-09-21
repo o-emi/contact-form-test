@@ -1,12 +1,16 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/confirm.css') }}">
+@endsection
+
 @section('content')
 <div class="confirm__content">
     <div class="confirm__heading">
         <h2>Confirm</h2>
     </div>
 <!-- 後で修正ありかも -->
-    <form class="form" action="{{ route('contact.store') }}" method="post">
+    <form class="form" action="{{ route('contact.store') }}" method="POST">
     @csrf
 <!-- 名前 -->
         <div class="confirm-table">
@@ -69,6 +73,10 @@
             </tr>
             </table>
         </div>
+
+        <!-- POST用 hidden -->
+        <input type="hidden" name="contact_id" value="{{ $contact['id'] ?? '' }}">
+
         <div class="form__button">
             <button class="form__button-submit" type="submit">送信</button>
 <!-- 修正リンク -->
