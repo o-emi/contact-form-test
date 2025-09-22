@@ -15,7 +15,7 @@ class ContactController extends Controller
         $categories = Category::all();
         // セッションから入力値を取得して表示
         $data = $request->session()->get('contact_input', []);
-        return view('index', compact('categories'));
+        return view('index', compact('categories', 'data'));
     }
 
 // 確認ページ

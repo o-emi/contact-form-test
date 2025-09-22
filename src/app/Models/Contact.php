@@ -10,11 +10,7 @@ class Contact extends Model
     use HasFactory;
 
     protected $fillable = [
-        'category_id',
-        'first_name',
-        'last_name',
-        'email',
-        'content',
+        'last_name', 'first_name', 'email', 'tel', 'content', 'category_id', 'address', 'address_2', 'gender'
     ];
 
 // リレーション: この問い合わせは1つのカテゴリに属する
