@@ -10,7 +10,7 @@ use App\Http\Requests\ContactRequest;
 class ContactController extends Controller
 {
 // 入力ページ
-    public function index()
+    public function index(Request $request)
     {
         $categories = Category::all();
         // セッションから入力値を取得して表示
