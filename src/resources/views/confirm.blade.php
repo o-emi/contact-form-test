@@ -61,7 +61,10 @@
             <tr class="confirm-table__row">
                 <th class="confirm-table__header">お問い合わせの種類</th>
                 <td class="confirm-table__text">
+                    <!-- 表示用 -->
                     <input type="text" name="category_id"value="{{ $contact['category_name'] }}" readonly/>
+                    <!-- 保存用 -->
+                    <input type="hidden" name="category_id" value="{{ $contact['category_id'] }}">
                 </td>
             </tr>
 <!-- お問い合わせ内容 -->
@@ -81,7 +84,6 @@
             <button class="form__button-submit" type="submit">送信</button>
 <!-- 修正リンク -->
             <a href="{{ route('home') }}" class="btn-edit">修正</a>
-        </div>
         </div>
     </form>
 </div>
