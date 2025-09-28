@@ -19,10 +19,6 @@ use App\Http\Controllers\ThanksController;
 */
 
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 // ホーム画面（お問い合わせフォーム）
 Route::get('/', [ContactController::class, 'index'])->name('home');
 
