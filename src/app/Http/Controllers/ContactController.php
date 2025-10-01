@@ -15,7 +15,7 @@ class ContactController extends Controller
         $categories = Category::all();
         // セッションから入力値を取得して表示
         $data = $request->session()->get('contact_input', []);
-        return view('index', compact('categories', 'data'));
+        return view('contact', compact('categories', 'data'));
     }
 
 // 確認ページ
@@ -46,7 +46,12 @@ class ContactController extends Controller
     $request->session()->forget('contact_input');
 
     // サンクス画面にリダイレクト（typeを指定）
-    return redirect()->route('thanks.show', ['type' => 'contact'])
+    return redirect()->route('thanks')
     ->with('message', 'お問い合わせありがとうございました！');
+    }
+
+    public function thanks()
+    {
+        return view('thanks');
     }
 }

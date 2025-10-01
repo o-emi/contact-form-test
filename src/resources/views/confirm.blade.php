@@ -9,7 +9,6 @@
     <div class="confirm__heading">
         <h2>Confirm</h2>
     </div>
-<!-- 後で修正ありかも -->
     <form class="form" action="{{ route('contact.store') }}" method="POST">
     @csrf
 <!-- 名前 -->
@@ -83,7 +82,7 @@
         <div class="form__button">
             <button class="form__button-submit" type="submit">送信</button>
 <!-- 修正リンク -->
-            <a href="{{ route('home') }}" class="btn-edit">修正</a>
+            <a href="{{ route('index') }}" class="btn-edit">修正</a>
         </div>
     </form>
 </div>

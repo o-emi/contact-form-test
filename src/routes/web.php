@@ -19,8 +19,7 @@ use App\Http\Controllers\ThanksController;
 */
 
 
-// ホーム画面（お問い合わせフォーム）
-Route::get('/', [ContactController::class, 'index'])->name('home');
+Route::get('/', [ContactController::class, 'index'])->name('index');
 
 // 登録関連
 Route::get('register', [RegisterController::class, 'register'])->name('register');
@@ -33,8 +32,7 @@ Route::post('login', [LoginController::class, 'login']);
 
 // お問い合わせフォーム（確認画面）
 Route::post('/confirm', [ContactController::class, 'confirm'])->name('contact.confirm');
-// お問い合わせフォーム（送信処理）
-// Route::post('store', [ContactController::class, 'send'])->name('contact.store');
+
 
 // 管理画面
 Route::middleware(['auth', 'admin'])->group(function () {
@@ -46,7 +44,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 Route::post('/store', [ContactController::class, 'store'])->name('contact.store');
 
 // サンクスページ（複数パターン）
-Route::get('/thanks/{type}', [ThanksController::class, 'show'])->name('thanks.show');
+Route::get('/thanks', [ContactController::class, 'thanks'])->name('thanks.');
 
 
 Route::post('/logout', function () {
