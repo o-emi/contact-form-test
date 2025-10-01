@@ -10,25 +10,15 @@
 </head>
 
 <body>
-  <header class="header">
-    <div class="header__inner">
-      <!-- <div class="header-utilities"> -->
-<!-- ロゴは固定-->
-        <a class="header__logo"href="/">
-        FashionablyLate
-        </a>
-<!-- 各ページで差し替え可能なリンク -->
-      <nav>
-        <ul class="header-nav">
-            @yield('header-link')
-        </ul>
-      </nav>
-      </div>
+  <div class="app">
+    <header class="header">
+      <h1 class="header__heading">FashionablyLate</h1>
+      @yield('link')
+    </header>
+    <div class="content">
+      @yield('content')
     </div>
-  </header>
-
-  <main>
-    @yield('content')
-  </main>
+  </div>
 </body>
+
 </html>
