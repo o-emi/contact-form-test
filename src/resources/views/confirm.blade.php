@@ -9,7 +9,7 @@
     <div class="confirm__heading">
         <h2>Confirm</h2>
     </div>
-    <form class="form" action="{{ route('contact.store') }}" method="POST">
+    <form class="form" action="{{ route('contact.thanks') }}" method="POST">
     @csrf
 <!-- 名前 -->
         <div class="confirm-table">
