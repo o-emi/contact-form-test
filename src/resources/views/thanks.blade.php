@@ -5,15 +5,16 @@
 @endsection
 
 @section('content')
-    <div class="thanks__content">
-        <div class="thanks__heading">
-            <h2>{{ session('message') }}</h2>
-        </div>
-    </div>
-<!-- HOMEボタン -->
-    <div class="thanks__button">
-        <a href="{{ route('home') }}" class="thanks__button-submit">
-        HOME
-        </a>
-    </div>
+<div class="thanks-page">
+  <div class="thanks-page__inner">
+    <p class="thanks-page__message">お問い合わせありがとうございました</p>
+    <form class="thanks-page__form" action="/" method="get">
+      <button class="thanks-page__btn btn">HOME</button>
+      </form>
+  </div>
+</div>
+<div class="thanks-page-bg__inner">
+  <span class="thanks-page-bg__text">Thank you</span>
+</div>
+
 @endsection
