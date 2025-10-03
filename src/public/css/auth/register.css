@@ -1,66 +1,51 @@
-.register-form__content {
-    max-width: 480px;
-    margin: 10% auto;
-    padding: 32px;
-    background-color: #f1ece7;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+.content {
+  background-color: #F1ECE7;
 }
 
-/* 見出しのスタイル */
-.register-form__heading h2 {
-    font-family: 'Inika', serif;
-    font-size: 28px;
-    color: #8B7969;
-    text-align: center;
-    margin-bottom: 32px;
+.register-form__inner {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
 }
 
-/* 入力欄のスタイル */
-.form__input--text input {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #C5B9B0;
-    border-radius: 6px;
-    background-color: #f5f5f5;
-    font-size: 14px;
-    margin-bottom: 12px;
+.register-form__form {
+  padding: 64px 96px;
+  width: 40vw;
+  border: 1px solid #C5B9B0;
+  border-radius: 8px;
+  background-color: #FDFEFE;
 }
 
-.form__button {
-    width: 25%;
-    margin: 0 auto;
-    display: flex;
+@media screen and (max-width: 1200px) {
+  .register-form__form {
+    width: 60vw;
+  }
 }
 
-/* 登録ボタン */
-.form__button-submit {
-    padding: 12px;
-    background-color: #8B7969;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    flex: 1;
+.register-form__group {
+  margin-bottom: 32px;
 }
 
-.form__button-submit:hover {
-    background-color: #6e5f52;
+.register-form__label {
+  display: block;
+  margin-bottom: 8px;
 }
 
-
-
-/* エラー時の枠線と文字色 */
-.form__group .form__error {
-    color: #ff0000; /* 赤文字 */
-    font-size: 0.875rem;
-    margin-top: 5px;
+.register-form__input {
+  display: block;
+  padding: 8px 12px;
+  width: 100%;
+  height: 48px;
+  border: none;
+  background-color: #F4F4F4;
+  color: #BEB1A6;
+  font-family: serif;
 }
 
-/* エラーがある場合の入力欄の赤枠 */
-.form__group input.is-invalid {
-    border: 1px solid #ff0000; /* 赤枠 */
-    background-color: #f7f7f7;  /* 背景は薄グレーのまま */
+.register-form__error-message {
+  color: #FF9494;
+}
+
+.register-form__btn {
+  margin: 60px auto 0;
 }
