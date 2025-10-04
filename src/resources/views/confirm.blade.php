@@ -5,22 +5,21 @@
 @endsection
 
 @section('content')
-<div class="confirm__content">
-    <div class="confirm__heading">
-        <h2>Confirm</h2>
-    </div>
-    <form class="form" action="{{ route('contact.thanks') }}" method="POST">
+<div class="confirm-form">
+  <h2 class="confirm-form__heading content__headeing">Confirm</h2>
+  <div class="confirm-form__inner">
+    <form action="/thanks" method="POST">
     @csrf
 <!-- 名前 -->
-        <div class="confirm-table">
-            <table class="confirm-table__inner">
-                <tr class="confirm-table__row">
-                    <th class="confirm-table__header">お名前</th>
-                    <td class="confirm-table__text">
-                        <input type="text" name="last_name" value="{{ $contact['last_name'] }}" readonly/>
-                        <input type="text" name="first_name" value="{{ $contact['first_name'] }}" readonly/>
-                    </td>
-                </tr>
+      <table class="confirm-form__table">
+        <tr class="confirm-form__row">
+          <th class="confirm-form__label">お名前</th>
+          <!-- ユーザーが確認（見えるように） -->
+          <td class="confirm-form__data">{{ $contacts['first_name'] }}&nbsp;{{ $contacts['last_name'] }}</td>
+          <!-- 画面には表示されないけど、サーバーに送るためのデータ -->
+          <input type="hidden" name="first_name" value="{{ $contacts['first_name'] }}">
+          <input type="hidden" name="last_name" value="{{ $contacts['last_name'] }}">
+        </tr>
 <!-- 性別 -->
             <tr class="confirm-table__row">
                 <th class="confirm-table__header">性別</th>
@@ -74,7 +73,6 @@
                 </td>
             </tr>
             </table>
-        </div>
 
         <!-- POST用 hidden -->
         <input type="hidden" name="contact_id" value="{{ $contact['id'] ?? '' }}">

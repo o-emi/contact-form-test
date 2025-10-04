@@ -42,7 +42,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                    <input type="password" name="password" placeholder="例 coachtech0123" value="{{ old('password') }}" />
+                    <input type="password" name="password" placeholder="例 coachtech0123"/>
                 </div>
                 <div class="form__error">
             <!--バリデーション機能を実装したら記述します。-->
