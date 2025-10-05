@@ -67,7 +67,7 @@
 <!-- お問い合わせの種類 -->
         <tr class="confirm-form__row">
           <th class="confirm-form__label">お問い合わせの種類</th>
-          <td class="confirm-form__data">{{ $category->contect}}</td>
+          <td class="confirm-form__data">{{ $category->content }}</td>
           <input type="hidden" name="category_id" value="{{ $contacts['category_id'] }}">
         </tr>
 <!-- お問い合わせ内容 -->

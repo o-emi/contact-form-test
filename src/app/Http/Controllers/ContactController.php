@@ -2,37 +2,31 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Contact;
-use App\Models\Category;
 use App\Http\Requests\ContactRequest;
+use App\Models\Category;
+use App\Models\Contact;
+use Illuminate\Http\Request;
+
+
+
 
 class ContactController extends Controller
 {
 // 入力ページ
-    public function index(Request $request)
+    public function index()
     {
         $categories = Category::all();
-        // セッションから入力値を取得して表示
-        $data = $request->session()->get('contact_input', []);
-        return view('contact', compact('categories', 'data'));
+        return view('contact', compact('categories'));
     }
 
 // 確認ページ
     public function confirm(ContactRequest $request)
     {
         // 入力値をすべて取得
-        $contact = $request->validated();
-        // 電話番号を結合
-        $contact['tel'] = $contact['tel_1'] . '-' . $contact['tel_2'] . '-' . $contact['tel_3'];
-        // / 選択されたカテゴリ名を取得して追加
+        $contacts = $request->all();
         $category = Category::find($request->category_id);
-        $contact['category_name'] = $category->content ?? '未選択';
-
-        // フォームに戻るときに入力値をセッションに保存
-        $request->session()->put('contact_input', $request->all());
         // 確認画面に渡す
-        return view('confirm', compact('contact'));
+        return view('confirm', compact('contacts', 'category'));
     }
 // 送信処理（DB保存）
     public function store(ContactRequest $request)

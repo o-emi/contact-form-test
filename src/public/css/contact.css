@@ -1,66 +1,146 @@
 
 
-/* 見出しのスタイル */
-.contact-form__heading h2 {
-    font-family: 'Inika', serif;
-    font-size: 28px;
-    color: #8B7969;
-    /* text-align: center; */
-    margin-bottom: 32px;
+.contact-form__inner {
+  margin: 32px auto 0;
+  width: 74%;
+  font-size: 16px;
 }
 
-.contct-form__content {
-  width: 90%;
-  max-width: 600px;
-  background-color: #fff;
-  padding: 32px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  box-sizing: border-box;
-}
-
-.form_group-wrapper {
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;      /* 縦中央 */
-    margin-bottom: 16px;
-    background-color: #f5f5f5; /* 背景色 */
-}
-
-.form__group-title {
-    width: 150px;           /* ラベル幅固定 */
-    text-align: left;
-    padding-right: 10px;
-    display: flex;
-    align-items: center;
-    gap: 4px;               /* ラベルと※の間隔 */
-}
-
-.form__group-content {
-    flex: 1; /* ラベル以外のスペースをすべて入力欄に */
-}
-
-.form__error {
-    color: #ff4d4f;       /* 赤色 */
-    font-size: 0.875rem;  /* 14pxくらい */
-    margin-top: 4px;      /* 上との余白 */
-    display: block;       /* ブロック表示で改行 */
-}
-
-
-/* ボタンの中央寄せ */
-.form__button {
-  /* text-align: center; */
+/* フォーム */
+.contact-form__group {
+  display: grid;
+  align-items: center;
   margin-top: 32px;
+
+  grid-template-columns: 1fr 2fr;
 }
 
-.form__button-submit {
-  padding: 12px 32px;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  background-color: #82756A
+.contact-form__group:first-of-type{
+  margin-top: 0;
+}
+
+.contact-form__group:last-of-type {
+  align-items: flex-start;
+}
+
+.contact-form__required {
+  color: #FF9494;
+}
+
+.contact-form__input {
+  padding: 8px 16px;
+  background-color: #F4F4F4;
+  color: #BEB1A6;
+}
+
+.contact-form__name-inputs,
+.contact-form__tel-inputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 32px;
+}
+
+.contact-form__name-input {
+  width: 100%;
+}
+
+.contact-form__gender-inputs {
+  display: flex;
+  justify-content: left;
+}
+
+.contact-form__gender-option {
+  margin-right: 64px;
+}
+
+.contact-form__gender-input {
+  position: absolute;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.contact-form__gender-text {
+  display: flex;
+  align-items: center;
+}
+
+.contact-form__gender-text::before {
+  display: block;
+  margin-right: 8px;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #8B7969;
+  border-radius: 50%;
+  content: '';
+}
+
+.contact-form__gender-input:checked+.contact-form__gender-text::before {
+  background: #8B7969;
+}
+
+.contact-form__tel-input {
+  width: calc(100%/3);
+  text-align: center;
+}
+
+.contact-form__select-inner {
+  position: relative;
+}
+
+.contact-form__select-inner::after {
+  position: absolute;
+  top: 50%;
+  left: 42%;
+  width: 0;
+  height: 0;
+  border-top: 12px solid #BEB1A6;
+  border-right: 12px solid transparent;
+  border-left: 12px solid transparent;
+  content: "";
+  transform: translateY(-50%);
+}
+
+.contact-form__select {
+  padding: 8px 16px;
+  width: 50%;
+  background-color: #F4F4F4;
+  color: #BEB1A6;
+}
+
+.contact-form__textarea {
+  padding: 8px 16px;
+  height: 144px;
+  background-color: #F4F4F4;
+  color: #BEB1A6;
+}
+
+.contact-form__btn {
+  margin: 32px auto 0;
+}
+
+/* エラーメッセージ */
+.contact-form__error-message {
+  margin-top: 8px;
+  color: #FF9494;
+
+  grid-column: 2;
+}
+
+.contact-form__name-group .contact-form__error-message{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 32px;
+}
+
+.contact-form__error-message-first-name,
+.contact-form__error-message-last-name {
+  width: 100%;
 }
 
 
