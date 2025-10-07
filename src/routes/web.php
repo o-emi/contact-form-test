@@ -1,10 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\AdminController;
+
 
 
 /*
@@ -19,12 +17,10 @@ use App\Http\Controllers\AdminController;
 */
 
 
-Route::get('/', [ContactController::class, 'index'])->name('index');
-
+Route::get('/', [ContactController::class, 'index']);
 // お問い合わせフォーム（確認画面）
-Route::post('/confirm', [ContactController::class, 'confirm'])->name('contact.confirm');
-
-Route::post('/thanks', [ContactController::class, 'store'])->name('contact.thanks');
+Route::post('/confirm', [ContactController::class, 'confirm']);
+Route::post('/thanks', [ContactController::class, 'store']);
 
 
 // 管理画面

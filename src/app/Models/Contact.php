@@ -9,8 +9,8 @@ class Contact extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'last_name', 'first_name', 'email', 'tel', 'content', 'category_id', 'address', 'address_2', 'gender'
+    protected $guarded = [
+        'id',
     ];
 
 // リレーション: この問い合わせは1つのカテゴリに属する

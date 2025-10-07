@@ -9,8 +9,8 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-    'content',
+    protected $guarded = [
+        'id',
     ];
 
 // リレーション：カテゴリに属する複数のお問い合わせ
