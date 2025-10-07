@@ -31,16 +31,26 @@ class ContactController extends Controller
 // 送信処理（DB保存）
     public function store(ContactRequest $request)
     {
-        $contact = $request->only([
-        'last_name', 'first_name', 'email', 'tel', 'content', 'category_id', 'address', 'address_2', 'gender'
-        ]);
-        Contact::create($contact);
+        if ($request->has('back')) {
+            return redirect('/')->withInput();
+        }
 
-    // 入力データを削除
-    $request->session()->forget('contact_input');
+        $request['tell'] = $request->tel_1 . $request->tel_2 . $request->tel_3;
+        Contact::create(
+            $request->only([
+                'category_id',
+                'first_name',
+                'last_name',
+                'gender',
+                'email',
+                'tell',
+                'address',
+                'building',
+                'detail',
+            ])
+            );
 
-    return view('thanks');
-
+        return view('thanks');
     }
 
 }

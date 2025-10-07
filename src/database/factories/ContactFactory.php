@@ -21,7 +21,7 @@ class ContactFactory extends Factory
         'gender'      => $this->faker->numberBetween(0,1),
 // safeEmail→メールアドレスのテキストをランダムに返す
         'email'       => $this->faker->unique()->safeEmail(),
-        'tel'         => $this->faker->phoneNumber(),
+        'tell'         => $this->faker->phoneNumber(),
         'address'     => $this->faker->address(),
         'building'    => $this->faker->optional()->secondaryAddress(),
         'detail'      => $this->faker->realText(50),

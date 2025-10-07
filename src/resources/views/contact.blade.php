@@ -125,7 +125,7 @@
         </label>
         <div class="contact-form__select-inner">
           <select class="contact-form__select" name="category_id" id="">
-            <option disabled selected>選択してください</option>
+            <option value="" disabled selected>選択してください</option>
             @foreach($categories as $category)
             <option value="{{ $category->id }}" {{ old('category_id')==$category->id ? 'selected' : '' }}>{{
               $category->content }}</option>
