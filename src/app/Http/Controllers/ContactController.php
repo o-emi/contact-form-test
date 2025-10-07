@@ -12,23 +12,21 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
-// 入力ページ
     public function index()
     {
         $categories = Category::all();
         return view('contact', compact('categories'));
     }
 
-// 確認ページ
+
     public function confirm(ContactRequest $request)
     {
-        // 入力値をすべて取得
         $contacts = $request->all();
         $category = Category::find($request->category_id);
-        // 確認画面に渡す
+
         return view('confirm', compact('contacts', 'category'));
     }
-// 送信処理（DB保存）
+
     public function store(ContactRequest $request)
     {
         if ($request->has('back')) {
@@ -53,4 +51,11 @@ class ContactController extends Controller
         return view('thanks');
     }
 
+    public function admin()
+    {
+      $contacts = Contact::with('category')->paginate(7);
+      $categories = Category::all();
+      $csvData = Contact::all();
+      return view('admin', compact('contacts', 'categories', 'csvData'));
+    }
 }
