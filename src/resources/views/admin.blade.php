@@ -1,10 +1,8 @@
 
 @extends('layouts.app')
 
-@section('header-link')
-<li class="header-nav__item">
-    <a class="header-nav__link" href="{{ route('logout') }}">Logout</a>
-</li>
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/admin.css')}}">
 @endsection
 
 @section('content')
